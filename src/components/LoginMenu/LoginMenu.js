@@ -7,13 +7,12 @@ const cx = classNames.bind(styles);
 
 const LoginMenu = () => (
   <Modal>
-    <div className={cx("question")}>
-      <div className={cx("title")}>포스트 삭제</div>
-      <div className={cx("description")}>
-        이 포스트를 정말로 삭제하시겠습니까?
-      </div>
-    </div>
-    <div className={cx("options")} />
+    <form className={cx("login-form")}>
+      <h2>Member Login</h2>
+      <input placeholder="아이디" />
+      <input placeholder="패스워드" />
+      <button>시작하기</button>
+    </form>
   </Modal>
 );
 

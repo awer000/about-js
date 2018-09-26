@@ -1,19 +1,20 @@
 @import "utils";
 
-.question {
-  background: white;
+.login-form {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
-  .title {
-    font-size: 1.25rem;
-    font-weight: 500;
+  h2 {
+    padding: 1rem;
+    font-size: 5rem;
+    font-weight: 300;
   }
-  .description {
-    margin-top: 0.25rem;
+  input {
+    font-size: 2rem;
+    margin: 0.3rem;
   }
-}
-
-.options {
-  padding: 1rem;
-  background: $oc-gray-1;
-  text-align: right;
+  button {
+    margin-top: 3rem;
+    font-size: 3rem;
+  }
 }
