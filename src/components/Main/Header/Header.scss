@@ -1,0 +1,48 @@
+@import "utils";
+
+.Header {
+  background: transparent;
+  box-shadow: 2px 2px 50px black;
+  .header-content {
+    height: 5rem;
+    width: 100%;
+    margin: 0 auto; // 중앙 정렬
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    // 내부 아이템 세로 중앙 정렬
+    display: flex;
+    align-items: center;
+
+    // 반응형 레이아웃
+    @include media("<wide") {
+      width: 100%;
+    }
+    @include media("<medium") {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .logo {
+      // 로고
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .right {
+      // 우측 내용
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      font-size: 2rem;
+      color: $oc-gray-1;
+
+      &:hover {
+        cursor: pointer;
+        color: $oc-gray-3;
+      }
+    }
+  }
+}

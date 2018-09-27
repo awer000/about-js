@@ -10,7 +10,7 @@ import {
 import "./App.scss";
 
 class App extends Component {
-  loginAccess = false;
+  loginAccess = true;
   render() {
     return (
       <div className={"App"}>
