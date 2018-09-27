@@ -5,9 +5,9 @@ import LoginMenu from "../LoginMenu/LoginMenu";
 
 const cx = classNames.bind(styles);
 
-const LoginLogo = () => {
+const LoginLogo = ({ logoCSS }) => {
   return (
-    <div className={cx("login-logo")}>
+    <div className={cx("login-logo", logoCSS && "logo-css")}>
       <p>We</p>
       <p>don`t know</p>
       <p>JS</p>
@@ -17,7 +17,8 @@ const LoginLogo = () => {
 
 class Login extends Component {
   state = {
-    loginTab: true
+    loginTab: true,
+    logoCSS: false
   };
 
   handleTabToogle = () => {
@@ -25,16 +26,31 @@ class Login extends Component {
       loginTab: false
     });
   };
+
+  handleAnimate = () => {
+    this.setState({
+      logoCSS: !this.state.logoCSS
+    });
+  };
   render() {
     return (
       <div className={cx("Login")}>
-        <div className={cx("border-logo")} onClick={this.handleTabToogle}>
-          {this.state.loginTab ? <LoginLogo /> : <div>hi</div>}
+        <div
+          className={cx("border-logo")}
+          onClick={() => {
+            // this.handleAnimate();
+            this.handleTabToogle();
+          }}
+        >
+          {this.state.loginTab ? (
+            <LoginLogo logoCSS={this.state.logoCSS} />
+          ) : (
+            <LoginMenu />
+          )}
         </div>
         <p>우리는 자바스크립트를 제대로 모른다</p>
         <p>하지만 그런 사람들이 모여</p>
         <p>말도 안되지만 원론적인 질문을 한다</p>
-        <LoginMenu />
       </div>
     );
   }

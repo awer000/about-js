@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 class Modal extends Component {
   render() {
     const { children, visible } = this.props;
-    if (!visible) return null;
+    // if (!visible) return null;
     return (
       <div>
         <div className={cx("transparent-background")} />
